@@ -1,11 +1,10 @@
-#GENERAL
+#general
 variable "region" {}
-variable "env" {}
-variable "account_id" {}
 
-#EC2
+#ec2
 variable "instance_type" {}
 variable "ami" {}
-variable "Name" {}
+variable "name" {}
 
-#Backend S3
+#Keypair
+variable "instance_keypair" {}
