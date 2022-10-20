@@ -1,10 +1,13 @@
 resource "aws_instance" "ec2demo" {
   ami = var.ami
-  instance_type = var.instance_type
+  #instance_type = var.instance_type
+  instance_type = var.instance_type_list[0]
+  #instance_type = var.instance_type_map["test"]
   user_data = file("${path.module}/app1-install.sh")
   key_name = var.instance_keypair
   vpc_security_group_ids = [ aws_security_group.vpc-ssh.id,aws_security_group.vpc-web.id ]
+  count = 2
   tags = {
-    "Name" = var.name
+    "Name" = "Count-Demo-${count.index}"
   }
 }
