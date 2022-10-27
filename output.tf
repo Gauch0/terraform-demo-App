@@ -41,9 +41,6 @@ output "for_output_list_public_ip"{
     value = [for instance in aws_instance.ec2demo: instance.public_ip]
 }
 
-output "instance_publicdns" {
-  
-}
 
 # # Output - For Loop with map
 # output "for_output_map1" {
