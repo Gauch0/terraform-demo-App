@@ -1,4 +1,5 @@
 */.terraform/*
 */.terraform.lock.hc1
 */terraform.tfstate
+*.pem
 terraform-key.pem
