@@ -6,6 +6,10 @@ terraform {
         source = "hashicorp/aws"
         version = "~> 3.0"
     }
+    null = {
+      source = "hashicorp/null"
+      version = "~> 3.0"
+    }
   }
 }
 
@@ -14,4 +18,5 @@ terraform {
 provider "aws" {
      # AWS Credentials profile configured on your local desktop terminal
     region = var.region
+    profile = "default"
 }
