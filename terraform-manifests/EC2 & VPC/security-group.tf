@@ -1,4 +1,4 @@
 module "security-group" {
-  source  = "terraform-aws-modules/security-group/aws"
-  version = "4.16.0"
+  source          = "terraform-aws-modules/security-group/aws"
+  version         = "4.16.0"
 }
