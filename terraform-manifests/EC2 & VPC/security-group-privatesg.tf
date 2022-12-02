@@ -14,4 +14,3 @@ module "private_sg" {
   egress_rules = ["all-all"]
   tags = local.common_tags
 }
-
