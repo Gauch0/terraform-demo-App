@@ -1,34 +1,65 @@
-output "this_alb_arn" {
-  description = "value of the ALB ARN"
-  value = module.alb.this_alb_arn
+# Terraform AWS Application Load Balancer (ALB) Outputs
+output "this_lb_id" {
+  description = "The ID and ARN of the load balancer we created."
+  value       = module.alb.this_lb_id
 }
 
-output "this_alb_id" {
-  description = "value of the ALB ID"
-  value = module.alb.this_alb_id
+output "this_lb_arn" {
+  description = "The ID and ARN of the load balancer we created."
+  value       = module.alb.this_lb_arn
 }
 
-output "this_alb_name" {
-  description = "value of the ALB name"
-  value = module.alb.this_alb_name
+output "this_lb_dns_name" {
+  description = "The DNS name of the load balancer."
+  value       = module.alb.this_lb_dns_name
 }
 
-output "this_alb_dns_name" {
-  description = "value of the ALB DNS name"
-  value = module.alb.this_alb_dns_name
+output "this_lb_arn_suffix" {
+  description = "ARN suffix of our load balancer - can be used with CloudWatch."
+  value       = module.alb.this_lb_arn_suffix
 }
 
-output "target_group_name" {
-  description = "value of the ALB target group name"
-  value = module.alb.target_group_name
+output "this_lb_zone_id" {
+  description = "The zone_id of the load balancer to assist with creating DNS records."
+  value       = module.alb.this_lb_zone_id
+}
+
+output "http_tcp_listener_arns" {
+  description = "The ARN of the TCP and HTTP load balancer listeners created."
+  value       = module.alb.http_tcp_listener_arns
+}
+
+output "http_tcp_listener_ids" {
+  description = "The IDs of the TCP and HTTP load balancer listeners created."
+  value       = module.alb.http_tcp_listener_ids
+}
+
+output "https_listener_arns" {
+  description = "The ARNs of the HTTPS load balancer listeners created."
+  value       = module.alb.https_listener_arns
+}
+
+output "https_listener_ids" {
+  description = "The IDs of the load balancer listeners created."
+  value       = module.alb.https_listener_ids
+}
+
+output "target_group_arns" {
+  description = "ARNs of the target groups. Useful for passing to your Auto Scaling group."
+  value       = module.alb.target_group_arns
+}
+
+output "target_group_arn_suffixes" {
+  description = "ARN suffixes of our target groups - can be used with CloudWatch."
+  value       = module.alb.target_group_arn_suffixes
+}
+
+output "target_group_names" {
+  description = "Name of the target group. Useful for passing to your CodeDeploy Deployment Group."
+  value       = module.alb.target_group_names
 }
 
 output "target_group_attachments" {
-  description = "value of the ALB target group attachments"
-  value = module.alb.target_group_attachments
-}
-
-output "this_alb_arn_suffix" {
-  description = "value of the ALB ARN suffix"
-  value = module.alb.this_alb_arn_suffix
+  description = "ARNs of the target group attachment IDs."
+  value       = module.alb.target_group_attachments
 }
