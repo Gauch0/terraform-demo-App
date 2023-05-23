@@ -1,0 +1,373 @@
+<details>
+<summary>Resumen</summary>
+```
+terraform plan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.dev-app.aws_instance.app will be created
+  + resource "aws_instance" "app" {
+      + ami                                  = "ami-090717c950a5c34d3"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = false
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t2.medium"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "pickit-aws-key-pair.pem"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = "subnet-0f3625521b25c29c3"
+      + tags                                 = {
+          + "Billing"     = "dev"
+          + "Name"        = "dev-app"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+          + "url"         = "https://example.com"
+        }
+      + tags_all                             = {
+          + "Billing"     = "dev"
+          + "Name"        = "dev-app"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+          + "url"         = "https://example.com"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = [
+          + "sg-06cf98c7807d22a03",
+        ]
+
+      + ebs_block_device {
+          + delete_on_termination = true
+          + device_name           = "/dev/sdb"
+          + encrypted             = false
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + snapshot_id           = (known after apply)
+          + tags                  = {
+              + "Name" = "dev-app-ebs"
+            }
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = 50
+          + volume_type           = "gp3"
+        }
+
+      + root_block_device {
+          + delete_on_termination = true
+          + device_name           = (known after apply)
+          + encrypted             = false
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags                  = {
+              + "Name" = "dev-app-root"
+            }
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = 15
+          + volume_type           = "gp3"
+        }
+    }
+
+  # module.dev-microservicios.aws_instance.microservicios will be created
+  + resource "aws_instance" "microservicios" {
+      + ami                                  = "ami-090717c950a5c34d3"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = false
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.medium"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "pickit-aws-key-pair.pem"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = "subnet-0f3625521b25c29c3"
+      + tags                                 = {
+          + "Billing"     = "dev"
+          + "Name"        = "dev-microservicios"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+          + "url"         = "https://example.com"
+        }
+      + tags_all                             = {
+          + "Billing"     = "dev"
+          + "Name"        = "dev-microservicios"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+          + "url"         = "https://example.com"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = [
+          + "sg-06cf98c7807d22a03",
+        ]
+
+      + root_block_device {
+          + delete_on_termination = true
+          + device_name           = (known after apply)
+          + encrypted             = false
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags                  = {
+              + "Name" = "dev-app-root-microservicios"
+            }
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = 10
+          + volume_type           = "gp2"
+        }
+    }
+
+  # module.dev-rabbitmq.aws_instance.rabbit will be created
+  + resource "aws_instance" "rabbit" {
+      + ami                                  = "ami-090717c950a5c34d3"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = false
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.medium"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "pickit-aws-key-pair.pem"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = "subnet-0f3625521b25c29c3"
+      + tags                                 = {
+          + "Billing"     = "dev"
+          + "Name"        = "dev-rabbitmq"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+          + "url"         = "https://example.com"
+        }
+      + tags_all                             = {
+          + "Billing"     = "dev"
+          + "Name"        = "dev-rabbitmq"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+          + "url"         = "https://example.com"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = [
+          + "sg-06cf98c7807d22a03",
+        ]
+
+      + root_block_device {
+          + delete_on_termination = true
+          + device_name           = (known after apply)
+          + encrypted             = false
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags                  = {
+              + "Name" = "dev-app-root-rabbitmq"
+            }
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = 15
+          + volume_type           = "gp3"
+        }
+    }
+
+  # module.dev-rds.aws_db_instance.rds will be created
+  + resource "aws_db_instance" "rds" {
+      + address                               = (known after apply)
+      + allocated_storage                     = 250
+      + apply_immediately                     = (known after apply)
+      + arn                                   = (known after apply)
+      + auto_minor_version_upgrade            = true
+      + availability_zone                     = (known after apply)
+      + backup_retention_period               = 14
+      + backup_window                         = (known after apply)
+      + ca_cert_identifier                    = (known after apply)
+      + character_set_name                    = (known after apply)
+      + copy_tags_to_snapshot                 = false
+      + db_name                               = (known after apply)
+      + db_subnet_group_name                  = "dev-mariadb-subnet-group"
+      + delete_automated_backups              = true
+      + deletion_protection                   = false
+      + endpoint                              = (known after apply)
+      + engine                                = "mariadb"
+      + engine_version                        = "10.6.10"
+      + engine_version_actual                 = (known after apply)
+      + final_snapshot_identifier             = "dev-db-final-snapshot"
+      + hosted_zone_id                        = (known after apply)
+      + id                                    = (known after apply)
+      + identifier                            = "dev-pickit-mariadb"
+      + identifier_prefix                     = (known after apply)
+      + instance_class                        = "db.t3.medium"
+      + kms_key_id                            = (known after apply)
+      + latest_restorable_time                = (known after apply)
+      + license_model                         = (known after apply)
+      + maintenance_window                    = (known after apply)
+      + max_allocated_storage                 = 0
+      + monitoring_interval                   = 0
+      + monitoring_role_arn                   = (known after apply)
+      + multi_az                              = (known after apply)
+      + name                                  = (known after apply)
+      + nchar_character_set_name              = (known after apply)
+      + option_group_name                     = (known after apply)
+      + parameter_group_name                  = (known after apply)
+      + password                              = (sensitive value)
+      + performance_insights_enabled          = false
+      + performance_insights_kms_key_id       = (known after apply)
+      + performance_insights_retention_period = (known after apply)
+      + port                                  = (known after apply)
+      + publicly_accessible                   = false
+      + replica_mode                          = (known after apply)
+      + replicas                              = (known after apply)
+      + resource_id                           = (known after apply)
+      + skip_final_snapshot                   = false
+      + snapshot_identifier                   = (known after apply)
+      + status                                = (known after apply)
+      + storage_type                          = "gp2"
+      + tags                                  = {
+          + "Billing"     = "dev"
+          + "Name"        = "dev-app"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+        }
+      + tags_all                              = {
+          + "Billing"     = "dev"
+          + "Name"        = "dev-app"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+        }
+      + timezone                              = (known after apply)
+      + username                              = "root"
+      + vpc_security_group_ids                = (known after apply)
+    }
+
+  # module.dev-rds.aws_db_subnet_group.rds_subnet_group will be created
+  + resource "aws_db_subnet_group" "rds_subnet_group" {
+      + arn         = (known after apply)
+      + description = "RDS subnet group"
+      + id          = (known after apply)
+      + name        = "dev-mariadb-subnet-group"
+      + name_prefix = (known after apply)
+      + subnet_ids  = [
+          + "subnet-0a3956f8345e1f68e",
+          + "subnet-0f3625521b25c29c3",
+        ]
+      + tags        = {
+          + "Name" = "dev-subnet-group"
+        }
+      + tags_all    = {
+          + "Name" = "dev-subnet-group"
+        }
+    }
+
+  # module.dev-rds.aws_security_group.sg_rds will be created
+  + resource "aws_security_group" "sg_rds" {
+      + arn                    = (known after apply)
+      + description            = "RDS security group"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "dev-rds-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Billing"     = "dev"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+        }
+      + tags_all               = {
+          + "Billing"     = "dev"
+          + "Owner"       = "Matias Lorenzo"
+          + "environment" = "dev"
+        }
+      + vpc_id                 = "vpc-02966b2338dac832f"
+    }
+
+  # module.dev-rds.aws_security_group_rule.rds_sg_in will be created
+  + resource "aws_security_group_rule" "rds_sg_in" {
+      + cidr_blocks              = [
+          + "10.0.0.0/20",
+        ]
+      + from_port                = 0
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 3306
+      + type                     = "ingress"
+    }
+
+Plan: 7 to add, 0 to change, 0 to destroy.
+
+</details>
+```
