@@ -22,7 +22,7 @@ This repository provides a template for deploying a secure and scalable infrastr
 
 1. Clone the repository
    ```shell
-   git clone https://github.com/Gauch0/TerraformDemo.git
+   git clone https://github.com/Gauch0/terraform-demo-App
 
 2. Navigate to the project directory
     ```shell
